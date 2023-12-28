@@ -1,0 +1,46 @@
+#include <iostream>
+#include <chrono>
+#include <thread>
+
+class Game {
+public:
+    Game() {
+    }
+
+    ~Game() {
+    }
+
+    void run() {
+        while (!isGameOver()) {
+            processInput();
+            update();
+            render();
+        }
+    }
+
+private:
+    bool gameOver = false;
+
+    bool isGameOver() {
+        return gameOver;
+    }
+
+    void processInput() {
+       
+    }
+
+    void update() {
+    }
+
+    void render() {
+        std::cout << "Rendering game..." << std::endl;
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    }
+};
+
+int main() {
+    Game game;
+    game.run();
+    return 0;
+}
